@@ -1,8 +1,8 @@
-<!-- /views/reviews-new.hbs -->
+<!-- views/reviews-edit.hbs -->
 
-<form method="POST" action="/reviews">
+<form method="POST" action="/reviews/{{review._id}}?_method=PUT">
     {{> reviews-form}}
-    <!-- BTTUON -->
+    <!-- BUTTON -->
     <p>
         <button type="submit">Save Review</button>
         <input type="button" value="Go back!" onclick="history.back()">
