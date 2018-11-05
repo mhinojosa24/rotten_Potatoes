@@ -16,9 +16,10 @@ app.engine('.hbs', exphbs({ extname: '.hbs', defaultLayout: 'main'}));
 app.set('view engine', '.hbs');
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(methodOverride('_method'));
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/rotten-potatoes', { useNewUrlParser: true });
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/rotten-potatoes');
 
 const reviews = require('./controllers/reviews')(app);
+const comments = require('./controllers/comments')(app);
 // reviews(app);
 
 
